@@ -7,7 +7,7 @@
         "colab_type": "text"
       },
       "source": [
-        "<a href=\"https://colab.research.google.com/github/supriyag123/PHD_Demo/blob/main/Streamlit.py\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+        "<a href=\"https://colab.research.google.com/github/supriyag123/PHD_Demo/blob/main/app.py\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
       ]
     },
     {
@@ -75,7 +75,8 @@
     {
       "cell_type": "code",
       "source": [
-        "%%writefile streamlit_app.py\n",
+        "# app.py\n",
+        "\n",
         "import streamlit as st\n",
         "import pandas as pd\n",
         "import numpy as np\n",
@@ -102,7 +103,6 @@
         "\n",
         "# --- UI Setup ---\n",
         "st.set_page_config(layout=\"wide\")\n",
-        "\n",
         "st.title(\"🛰️ Real-Time Industrial IoT Sensor Dashboard\")\n",
         "st.markdown(\"\"\"\n",
         "Welcome to the **Simulated IoT Monitoring App**.\n",
@@ -159,7 +159,7 @@
         "        st.markdown(\"### 🤖 Agent Reasoning\")\n",
         "        st.info(agent_message)\n",
         "\n",
-        "    time.sleep(1.0 / speed)\n"
+        "    time.sleep(1.0 / speed)"
       ],
       "metadata": {
         "id": "oOHjAhnZs1Az",
@@ -180,64 +180,11 @@
       ]
     },
     {
-      "cell_type": "code",
-      "source": [
-        "!streamlit run streamlit_app.py &>/dev/null&"
-      ],
-      "metadata": {
-        "id": "eC8pcMYYaUtE"
-      },
-      "execution_count": null,
-      "outputs": []
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "from pyngrok import ngrok\n",
-        "ngrok.kill()  # clean old tunnels\n",
-        "\n",
-        "# ⬇️ paste your token between the quotes\n",
-        "ngrok.set_auth_token(\"30zHX6xv0Aqb6STXjMtLNsaa6el_45Xmu5rKv77UofrqjgkFR\")\n",
-        "\n",
-        "public_url = ngrok.connect(8501)  # tip: region option possible e.g. options={\"region\":\"au\"}\n",
-        "print(\"Streamlit URL:\", public_url)"
-      ],
-      "metadata": {
-        "id": "3K4QCcqas-qL",
-        "outputId": "62065a54-d397-4cb4-97bf-b6010dc48d8e",
-        "colab": {
-          "base_uri": "https://localhost:8080/"
-        }
-      },
-      "execution_count": null,
-      "outputs": [
-        {
-          "output_type": "stream",
-          "name": "stdout",
-          "text": [
-            "Streamlit URL: NgrokTunnel: \"https://d0f52aa92ddd.ngrok-free.app\" -> \"http://localhost:8501\"\n"
-          ]
-        }
-      ]
-    },
-    {
       "cell_type": "markdown",
       "source": [],
       "metadata": {
         "id": "W-RMQkgLak9I"
       }
-    },
-    {
-      "cell_type": "code",
-      "source": [
-        "from google.colab import drive\n",
-        "drive.mount('/content/drive')"
-      ],
-      "metadata": {
-        "id": "Xp-Mv3Ksamxv"
-      },
-      "execution_count": null,
-      "outputs": []
     },
     {
       "cell_type": "markdown",
@@ -261,7 +208,7 @@
       "provenance": [],
       "machine_shape": "hm",
       "mount_file_id": "https://github.com/supriyag123/PHD_Pub/blob/main/PAPER_GDRNet_METROPM_Step1.ipynb",
-      "authorship_tag": "ABX9TyNJ56lD6Nkzb0fQDzl/l5Ax",
+      "authorship_tag": "ABX9TyP53WvRgKssA4oTeL2LvG/m",
       "include_colab_link": true
     },
     "kernelspec": {
