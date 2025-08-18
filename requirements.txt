@@ -1,4 +1,19 @@
-streamlit
+# Core libraries
+streamlit>=1.31
 pandas
 numpy
-plotly
+
+# Plotting
+plotly>=5.18
+
+# Optional (if you're using interactive widgets or caching)
+scikit-learn
+matplotlib
+
+# For ML model (if you use MLP or any DL framework)
+torch        # or tensorflow depending on what AdaptiveWindowAgent uses
+
+# For working with JSON, logs, or utils
+tqdm
+
+# Any other specific libraries your agents or utils use
